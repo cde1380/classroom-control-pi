@@ -1,6 +1,6 @@
 class skeleton {
-  dir { '/etc/skel':
-#    ensure => ???,   # what value should go here?
+  file { '/etc/skel':
+    ensure => directory,   # what value should go here?
     owner  => 'root',
     group  => 'root',
     mode   => '0755',
