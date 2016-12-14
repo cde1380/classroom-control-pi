@@ -11,4 +11,4 @@ export PATH=$PATH:/usr/localbin
 
 # User specific aliases and functions
 
-caw "Hello, Word !!"
+cowsay "Hello, Word !!"
