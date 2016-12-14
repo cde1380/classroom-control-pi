@@ -32,6 +32,10 @@ node default {
   notify { "This is the default message from the apocasan environment, Helo Word !": }
 }
 
-node apocasan.puppetlabs.vm {
+ node apocasan.puppetlabs.vm {
  notify { "This will only be enforced on the Linux container.": }
+ exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd": 
+        path => '/usr/bin:/usr/local/bin',
+        creates => '/etc/motd',
+}
 }
