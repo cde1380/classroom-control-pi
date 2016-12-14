@@ -22,7 +22,12 @@
 # specified in the console for that node.
 
 node 'reidv.puppetlabs.vm' {
-notify { "This will only be enforced on the Linux container.": }
+#notify { "This will only be enforced on the Linux container.": }
+exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+path => '/usr/bin:/usr/local/bin',
+creates => '/etc/motd',
+}
+
 }
 
 node default {
