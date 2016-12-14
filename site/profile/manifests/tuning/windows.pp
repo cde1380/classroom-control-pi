@@ -13,8 +13,7 @@ class profile::tuning::windows {
     }
     registry::value { 'TcpTimedWaitDelay':
         key => 'HKLM\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters',
-        value => 'TcpTimedWaitDela,
+        value => 'TcpTimedWaitDela',
         data => '0x0000001e',
-
     }
 }
