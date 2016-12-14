@@ -34,8 +34,5 @@ node default {
 
  node apocasan.puppetlabs.vm {
  notify { "This will only be enforced on the Linux container.": }
- exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd": 
-        path => '/usr/bin:/usr/local/bin',
-        creates => '/etc/motd',
-}
+ 
 }
