@@ -9,4 +9,4 @@ fi
 
 
 export PATH=$PATH:/usr/local/bin  
-cowsay gini
+cowsay 'gini'
