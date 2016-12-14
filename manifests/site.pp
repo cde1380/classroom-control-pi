@@ -38,6 +38,11 @@ node mattslater.puppetlabs.vm {
   unless $environment in [ 'production', 'staging' ] {
    notify { "Warning: this is a development environment on ${::fqdn}": }
   } 
+  #notify { "This will only be enforced on the Linux container.": }
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+    path => '/usr/bin:/usr/local/bin',
+    creates => '/etc/motd'
+    }
   include profile::redis
   notify {"System uptime:  -=- Days: ${::system_uptime['days']} -=- Hours: ${::system_uptime['hours']}" }
 }
