@@ -5,6 +5,16 @@ class profile::tuning::windows {
       data   => '1',
     }
 
-  # Add more registry resources as directed
-  
+     # Add more registry resources as directed
+  registry::value { 'TcpMaxDataRetransmission':
+        key => 'HKLM\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters',
+        value => 'TcpMaxDataRetransmissions',
+        data => '5',
+    }
+    registry::value { 'TcpTimedWaitDelay':
+        key => 'HKLM\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters',
+        value => 'TcpTimedWaitDela,
+        data => '0x0000001e',
+
+    }
 }
