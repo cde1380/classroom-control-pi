@@ -29,5 +29,7 @@ node default {
   # example code for the classroom
   include examples::puppetize
   
+  notify { "Hello world! I am ${::fqdn}": }
+  
   notify { "This is the default message from the linux environment": }
 }
