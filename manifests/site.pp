@@ -27,6 +27,10 @@ node /puppetlabs\.vm/ {
 
 node sly00er.puppetlabs.vm {
 #notify { "This will only be enforced on the Linux container for ${::fqdn}": }
+exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+path => '/usr/bin:/usr/local/bin',
+creates => '/etc/motd',
+     }
 }
 
 node default {
