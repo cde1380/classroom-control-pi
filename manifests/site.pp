@@ -44,7 +44,7 @@ node mattslater.puppetlabs.vm {
   #  creates => '/etc/motd'
   #}
   include profile::redis
-  notify {"System uptime:  -=- Days: ${::system_uptime['days']} -=- Hours: ${::system_uptime['hours']}" }
+  #notify {"System uptime:  -=- Days: ${::system_uptime['days']} -=- Hours: ${::system_uptime['hours']}" }
 }
 #  notify {"This machine is ${::fqdn}"} 
 #}
