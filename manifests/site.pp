@@ -37,9 +37,8 @@ node default {
 node mattslater.puppetlabs.vm {
   unless $environment in [ 'production', 'staging' ] {
    notify { "Warning: this is a development environment on ${::fqdn}": }
-  }
+  } 
   include profile::redis
-  
   notify {"System uptime:  -=- Days: ${::system_uptime['days']} -=- Hours: ${::system_uptime['hours']}" }
 }
 #  notify {"This machine is ${::fqdn}"} 
