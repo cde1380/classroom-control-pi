@@ -30,9 +30,4 @@ node default {
   include examples::puppetize
   
   notify { "This is the LMacchi branch": }
-  
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-    path    => '/usr/local/bin',
-    creates => '/etc/motd',
-  }
 }
