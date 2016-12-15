@@ -25,13 +25,13 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  unless $environment in [ 'production', 'staging' ] {
-   notify { "Warning: this is a development environment on ${::fqdn}": }
-  } 
+  #unless $environment in [ 'production', 'staging' ] {
+  # notify { "Warning: this is a development environment on ${::fqdn}": }
+ # } 
   # example code for the classroom
   include examples::puppetize
   
-  notify {"Hello World. I am ${::fqdn}":}
+  #notify {"Hello World. I am ${::fqdn}":}
 }
 
 node mattslater.puppetlabs.vm {
@@ -41,5 +41,5 @@ node mattslater.puppetlabs.vm {
   include motd
   include profile::redis
   #notify {"System uptime:  -=- Days: ${::system_uptime['days']} -=- Hours: ${::system_uptime['hours']}" }
-  notify {"This machine is ${::fqdn}"} 
+  #notify {"This machine is ${::fqdn}"} 
 }
